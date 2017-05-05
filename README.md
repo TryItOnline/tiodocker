@@ -14,7 +14,7 @@ This image was tested to run fine on both Windows (Windows 10) and Linux (Ubuntu
 
 ## Getting the image
 
-You can build the image yourself:
+You can build the image yourself. Run in the root of the repo:
 
 ```bash
 docker build --no-cache=true -t tryitonline/tryitoffline .
