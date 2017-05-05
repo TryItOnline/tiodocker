@@ -1,0 +1,39 @@
+# Provide commit number or branch for `git checkout` command performed after cloning tryitonline repository
+# This allows installing a historic version or a feature branch instead of the master latest
+TryItOnlineCommit="master"
+
+# To be able to use Dyalog APL, you need to download 64-bit Dyalog APL Classic and Unicode
+# to /opt This requires a valid Dyalog license. If you have one, you can save your MyDyalog
+# username in this file and run the misc/dldyalogapl script manually, before the remaining
+# setup scripts. If you do not have a license, you can run the setup script without the
+# Dyalog APL archive, but Dyalog APL won't be installed.
+# DyalogUser=
+
+# The following five settings are for the domain names used in the setup
+# Please read more about them in accompanying documentation.
+
+# Domain where https://tryitonline.net will be hosted
+TRYITONLINENET=tryitonline
+
+# Domain where https://tio.run will be hosted
+TIORUN=tiorun
+
+# Domain for <language>.tryitonline.net -> tio.run/nexus/<language> redirects.
+# This setting is optional and may be left empty or removed entirely.
+# LANGDOMAIN=
+
+# You can provide your own SSH key pairs or let them be generated automatically.
+# For the root (resp. apache) user, if either an RSA key pair (id_rsa and id_rsa.pub)
+# or an ED25519 key pair (id_ed25519 and id_ed25519.pub) is found in private/root
+# (resp. private/apache), they will be copied in the user's ssh folder. Otherwise, an
+# ED25519 key pair will be generated automatically.
+# Likewise, if either an RSA key pair (ssh_host_rsa and ssh_host_rsa.pub) or an
+# ED25519 key pair (ssh_host_ed25519 and ssh_host_ed25519.pub) is found in private,
+# they will replace the pre-generated host keys in /etc/ssh.
+
+# This option should be left turned off ("n"). If it's turned on ("y") certificates
+# and selinux configuration will be skipped during setup. This is useful for running
+# an offline copy of TryItOnline in a docker image (which does no support selinux)
+# Exposing an installation in offline mode to internet is a big security risk and should 
+# never be done.
+OfflineMode="y"
