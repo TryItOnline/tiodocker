@@ -10,7 +10,7 @@ This docker image is to allow running <https://tryitonline.net> locally. Here ar
 - Since TryItOnline security is based on selinux, and it is not possible to run selinux specific commands inside a docker container, selinux is disabled in this image. This means, that if someone can browse to the web site served by this image, they can potentially compromise the host. **!!!Do not expose installations based on this image to any non-trused enviroment (e.g.: internet)!!!**
 - Dyalog APL is not included in the image. If you would like to use Dyalog APL, you'll have to copy the installation rpms into the container and install them with dnf. (See below)
 
-This image was test to run fine on both Windows (Windows 10) and Linux (Ubuntu 16.04).
+This image was tested to run fine on both Windows (Windows 10) and Linux (Ubuntu 16.04).
 
 ## Getting the image
 
