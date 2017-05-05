@@ -103,6 +103,8 @@ tiopull jelly
 
 Also some languages may be updated by running `dnf update`.
 
+If a new language needs to be added to the image, in might be easier to rebuild the image. That will pull all the languages from [tiosetup](https://github.com/TryItOnline/tiosetup).
+
 
 ## Adding Dyalog APL
 
