@@ -7,7 +7,7 @@ This docker image is to allow running <https://tryitonline.net> locally. Here ar
 - It is not updated often, so <https://tryitonline.net> is always more up to date. (But see below on how to update individual languages)
 - The image as of the time of writing is about **4GB in size**, so it can take some time to download depending on your connection speed
 - The image takes about **2 hours to build** (again, depending on your machine spec)
-- Since TryItOnline security is based on selinux, and it is not possible to run selinux specific commands inside a docker container, selinux is disabled in this image. This means, that if someone can browse to the web site served by this image, they can potentially compromise the host. **!!!Do not expose installations based on this image to any non-trused enviroment (e.g.: internet)!!!**
+- Since TryItOnline security is based on selinux, and it is not possible to run selinux specific commands inside a docker container, selinux is disabled in this image. This means, that if someone can browse to the web site served by this image, they can potentially compromise the host. **!!!Do not expose installations based on this image to any non-trusted environment (e.g.: internet)!!!**
 - Dyalog APL is not included in the image. If you would like to use Dyalog APL, you'll have to copy the installation rpms into the container and install them with dnf. (See below)
 
 This image was tested to run fine on both Windows (Windows 10) and Linux (Ubuntu 16.04).
