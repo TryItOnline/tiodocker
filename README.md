@@ -7,7 +7,7 @@ This docker image is to allow running <https://tryitonline.net> locally. Here ar
 - It is not updated often, so <https://tryitonline.net> is always more up to date. (But see below on how to update individual languages)
 - The image as of the time of writing is about **4GB in size**, so it can take some time to download depending on your connection speed
 - The image takes about **2 hours to build** (again, depending on your machine spec)
-- Since TryItOnline security is based on selinux, and it is not possible to run selinux specific commands inside a docker container, selinux is disabled in this image. This means, that if someone can browse to the web site served by this image, they are a root inside the docker container and can potentially compromise the host. **!!!Do not expose installations based on this image to any non-trusted environment (e.g.: internet)!!!**
+- Since TryItOnline security is based on SELinux, and it is not possible to run SELinux specific commands inside a docker container, SELinux is disabled in this image. This means, that if someone can browse to the web site served by this image, they are a root inside the docker container and can potentially compromise the host. **!!!Do not expose installations based on this image to any non-trusted environment (e.g.: internet)!!!**
 - Dyalog APL is not included in the image. If you would like to use Dyalog APL, you'll have to copy the installation rpms into the container and install them with dnf. (See below)
 
 This image was tested to run fine on both Windows (Windows 10) and Linux (Ubuntu 16.04).
@@ -34,6 +34,9 @@ First add the following to your hosts file:
 127.0.0.1 tryitonline
 127.0.0.1 tiorun
 ```
+
+When you put the host records your computer starts resolving domain names as per the record configured, so tryitonline will resolve to 127.0.0.1. The web server uses the host header to select the site to server. The host header is what you specify in the domain part off the url, which is in this case "tryitonline"
+The image configured to recognize "tryitonline" for the static site "e.g. tryitonline.net" and tiorun for the nexus (e.g "tio.run"), this can be changed in the apache configuration (/etc/httpd inside the container).
 
 The hosts file is usually at `C:\Windows\System32\drivers\etc\hosts` on Windows or `/etc/hosts` on Linux.
 
@@ -86,6 +89,15 @@ tiodryrun
 ```
 
 inside container shell. (Depending on your hardware it can take around 2 minutes to finish).
+
+## Troubleshooting
+
+It is generally recommended pulling `tryitonline/tryitoffline:tested` from Docker Hub, since it is usually minimally tested. If you build your own image and it does not work (which is most often happens because of network connectivity problems) here are a few ways to diagnose.
+
+You can delete your old container with `docker container rm -f tiooffline` then create a new one without trying to start tryitonline, but just with bash to access the build logs `docker run -it tryitonline/tryitoffline /bin/bash` the logs are then in `/var/log/tioupd`
+
+Another way to diagnose it is to remove the container as above and then run it like this: `docker run -it --name tiooffline -p 80:80 --add-host arena:127.0.0.1 tryitonline/tryitoffline` this will produce some start up output and possibly some errors that could help.
+
 
 ## Updating languages
 
