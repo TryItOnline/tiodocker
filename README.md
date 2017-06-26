@@ -23,7 +23,7 @@ docker build --no-cache=true -t tryitonline/tryitoffline .
 Or download from docker hub:
 
 ```bash
-docker pull tryitonline/tryitoffline .
+docker pull tryitonline/tryitoffline
 ```
 
 ## Running the image
