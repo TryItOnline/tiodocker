@@ -1,4 +1,4 @@
-FROM fedora:25
+FROM fedora:26
 
 LABEL description="TryItOnline Offline Image https://tryitonline.net" maintainer="Andrew Savinykh<andrew@tryitonline.nz>"
 
