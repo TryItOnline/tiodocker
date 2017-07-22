@@ -25,7 +25,7 @@ RUN chmod +x /usr/local/bin/* \
  && cp /opt/tiodocker/config.docker /opt/tiosetup/private/config \
  && /opt/tiosetup/bootstrap \
  && dnf clean all \
- && rm -rf /tmp/*
+ && rm -rf /tmp/* \
  && rm -f /run/nologin
 
 VOLUME /etc/httpd /srv
