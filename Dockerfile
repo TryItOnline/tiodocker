@@ -26,6 +26,7 @@ RUN chmod +x /usr/local/bin/* \
  && /opt/tiosetup/bootstrap \
  && dnf clean all \
  && rm -rf /tmp/*
+ && rm -f /run/nologin
 
 VOLUME /etc/httpd /srv
 

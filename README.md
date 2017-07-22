@@ -98,7 +98,6 @@ You can delete your old container with `docker container rm -f tiooffline` then 
 
 Another way to diagnose it is to remove the container as above and then run it like this: `docker run -it --name tiooffline -p 80:80 --add-host arena:127.0.0.1 tryitonline/tryitoffline` this will produce some start up output and possibly some errors that could help.
 
-
 ## Updating languages
 
 Some languages updates are tricky, but some languages (listed [here](https://github.com/TryItOnline/tiosetup/tree/master/languages)) can be updated relatively easily from the command line. Run:
@@ -118,7 +117,7 @@ Also some languages may be updated by running `dnf update`.
 If a new language needs to be added to the image, in might be easier to rebuild the image. That will pull all the languages from [tiosetup](https://github.com/TryItOnline/tiosetup).
 
 
-## Adding Dyalog APL
+## Adding Dyalog APL (also: classic, quadr, quads)
 
 If you have Dialog APL installation rpms, you can copy them into your container:
 
