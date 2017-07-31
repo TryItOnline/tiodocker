@@ -21,8 +21,8 @@ RUN chmod +x /usr/local/bin/* \
  && wget -q https://github.com/krallin/tini/releases/download/v$TINI_VER/tini_$TINI_VER.rpm \
  && dnf install -y tini_$TINI_VER.rpm \
  && git clone https://github.com/TryItOnline/tiosetup.git /opt/tiosetup \
- && git checkout Min \
  && cd /opt/tiosetup \
+ && git checkout Min \
  && cp /opt/tiodocker/config.docker /opt/tiosetup/private/config \
  && /opt/tiosetup/bootstrap \
  && dnf clean all \
