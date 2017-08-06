@@ -25,7 +25,6 @@ RUN chmod +x /usr/local/bin/* \
  && git checkout Min \
  && cp /opt/tiodocker/config.docker /opt/tiosetup/private/config \
  && /opt/tiosetup/bootstrap \
- && dnf clean all \
  && rm -rf /tmp/* \
  && rm -f /run/nologin
 
