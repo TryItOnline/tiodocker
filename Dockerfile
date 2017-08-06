@@ -12,7 +12,7 @@ COPY rootfs /
 
 RUN chmod +x /usr/local/bin/* \
  && dnf update -y \
- && dnf install -y git wget dnf-plugins-core openssh-server glibc-locale-source python gettext vim-common file policycoreutils sudo \
+ && dnf install -y git wget dnf-plugins-core openssh-server glibc-locale-source python gettext vim-common file policycoreutils sudo iputils \
  && pip install --upgrade pip \
  && pip install supervisor \
  && /usr/libexec/openssh/sshd-keygen ed25519 \
