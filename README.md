@@ -119,7 +119,7 @@ If a new language needs to be added to the image, in might be easier to rebuild 
 
 ## Adding Dyalog APL (also: classic, quadr, quads)
 
-If you have Dialog APL installation rpms, you can copy them into your container:
+If you have Dyalog APL installation rpms, you can copy them into your container:
 
 ```bash
 docker cp linux_64_15.0.29644_unicode.x86_64.rpm tiooffline:/opt/linux_64_15.0.29644_unicode.x86_64.rpm
